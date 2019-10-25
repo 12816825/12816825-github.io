@@ -16,14 +16,17 @@
             else { console.log('not authenticated');}}
     
 });
-               function checkLoginState() {
-                   function statusChangeCallback(response){
-                           if(response.status === 'connected'){
-                           console.log('logged in and authenticated');}
-                           else { console.log('not authenticated');}} ;
-                });
-               
-            }
+               function checkLoginState() { 
+                FB.getLoginStatus(function(response) { 
+                 function statusChangeCallback(response){
+            if(response.status === 'connected'){
+            console.log('logged in and authenticated');}
+            else { console.log('not authenticated');}}
+    
+});
+               }
+                   
+           
            
             (function(d, s, id){
                var js, fjs = d.getElementsByTagName(s)[0];

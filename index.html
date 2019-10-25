@@ -16,6 +16,13 @@
             else { console.log('not authenticated');}}
     
 });
+               function checkLoginState() {
+                FB.getLoginStatus(function(response) { 
+                 function statusChangeCallback(response){
+            if(response.status === 'connected'){
+            console.log('logged in and authenticated');}
+            else { console.log('not authenticated');}}}};  
+              
             };
           
             (function(d, s, id){
@@ -26,15 +33,6 @@
                fjs.parentNode.insertBefore(js, fjs);
              }(document, 'script', 'facebook-jssdk'));
             
-            function checkLoginState() {
-                FB.getLoginStatus(function(response) { 
-                 function statusChangeCallback(response){
-            if(response.status === 'connected'){
-            console.log('logged in and authenticated');}
-            else { console.log('not authenticated');}}
-    
-}}}
- 
           </script>
         
         <fb:login-button 

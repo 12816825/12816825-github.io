@@ -14,13 +14,16 @@
       version    : 'v4.0'
               });
       
-         FB.getLoginStatus(function(response) {
-         function statusChangeCallback(response) {
-         if(status.response === 'connected') { console.log('authenticated');}
-         else{ console.log('not authenticated');
-     }
-      } 
-});   
+        FB.login(function(response) {
+    if (response.authResponse) {
+     console.log('Welcome!  Fetching your information.... ');
+     FB.api('/me', function(response) {
+       console.log('Good to see you, ' + response.name + '.');
+     });
+    } else {
+     console.log('User cancelled login or did not fully authorize.');
+    }
+});
           
   };
      
@@ -32,13 +35,16 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
       function checkLoginState() {
-  FB.getLoginStatus(function(response) {
-         function statusChangeCallback(response) {
-         if(status.response === 'connected') { console.log('authenticated');}
-         else{ console.log('not authenticated');
-     }
-      } 
-});   
+ FB.login(function(response) {
+    if (response.authResponse) {
+     console.log('Welcome!  Fetching your information.... ');
+     FB.api('/me', function(response) {
+       console.log('Good to see you, ' + response.name + '.');
+     });
+    } else {
+     console.log('User cancelled login or did not fully authorize.');
+    }
+});
 }
 </script>
    <fb:login-button 

@@ -13,8 +13,12 @@
       version    : 'v4.0'
               });
       
-    FB.AppEvents.logPageView();   
-      
+   FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});   
+      Function statusCangeCallback(response){
+         if(status.response === 'connected') { console.log('authenticated');}
+         elese{ console.log('not authenticated');}}
   };
 
   (function(d, s, id){

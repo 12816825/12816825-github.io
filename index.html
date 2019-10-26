@@ -16,6 +16,11 @@
    FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
 });   
+         function statusChangeCallback(response) {
+         if(status.response === 'connected') { console.log('authenticated');}
+         elese{ console.log('not authenticated');
+     }
+      } 
       
   };
      
@@ -26,11 +31,6 @@
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-      function statusChangeCallback(response) {
-         if(status.response === 'connected') { console.log('authenticated');}
-         elese{ console.log('not authenticated');
-     }
-      } 
 </script>
   </body>
 </html>

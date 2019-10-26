@@ -13,15 +13,14 @@
       version    : 'v4.0'
               });
       
-   FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-});   
+         FB.getLoginStatus(function(response) {
          function statusChangeCallback(response) {
          if(status.response === 'connected') { console.log('authenticated');}
          else{ console.log('not authenticated');
      }
       } 
-      
+});   
+          
   };
      
   (function(d, s, id){
@@ -33,8 +32,12 @@
    }(document, 'script', 'facebook-jssdk'));
       function checkLoginState() {
   FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
+         function statusChangeCallback(response) {
+         if(status.response === 'connected') { console.log('authenticated');}
+         else{ console.log('not authenticated');
+     }
+      } 
+});   
 }
 </script>
    <fb:login-button 
